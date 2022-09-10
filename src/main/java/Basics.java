@@ -102,6 +102,7 @@ public class Basics {
          * Current count: 0
          */
         for (int i = 1; i <= 10; i++){
+            System.out.println("Current count: ");
             System.out.println(i);
         }
 
@@ -148,18 +149,11 @@ public class Basics {
         StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
-        boolean printNext = true;
-        for (int i = 0; i <= to_split.length(); i++){
-            String character = String.valueOf(to_split.charAt(i));
-            if (printNext){
-                ret.append(i);
-                printNext = false;
-            }
-            else if (character.equals(" ")) {
-                printNext = true;
-            }
-        }
+        String[] arr = to_split.split(" ");
 
+        for (String word : arr) {
+            ret.append(word.charAt(0));
+        }
 
         return ret.toString();
     }
